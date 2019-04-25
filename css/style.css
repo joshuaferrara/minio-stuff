@@ -1,0 +1,23 @@
+body {
+    background: url("background2.png") no-repeat;
+    font-family: 'Cute Font', cursive;
+    font-size: 1.5em;
+}
+ol {
+    list-style-type: square;
+}
+h1 {
+    display: flex;
+    justify-content: center;
+}
+.uploadform, li{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    text-align: center;
+}
+p {
+    padding: 1em;
+}
+
+/* give up lul */ 

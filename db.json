@@ -1,0 +1,19 @@
+{
+  "images": [
+    {
+      "id": 1,
+      "src": "http://localhost:9000/images/300.jpeg",
+      "caption": "kitteh"
+    },
+    {
+      "src": "http://localhost:9000/images/beach.jpeg",
+      "caption": "beach",
+      "id": 8
+    },
+    {
+      "src": "http://localhost:9000/images/000148230007.jpg",
+      "caption": "big wheel",
+      "id": 9
+    }
+  ]
+}
