@@ -3,8 +3,12 @@ $(document).ready(() => {
 
   // Load posts
   $.getJSON('http://localhost:3000/images', (images) => {
+    const fragment = document.getElementById('image-template');
     images.forEach((image) => {
-      $(imageList).append(`<li><img class="pic" src="${image.src}" ><p class="caption">  ${image.caption}</p></li>`);
+      const instance = document.importNode(fragment.content, true);
+      instance.querySelector('.pic').setAttribute("src", image.src);
+      instance.querySelector('.caption').innerHTML = image.caption;
+      document.getElementById('images').appendChild(instance);
     });
   });
 });

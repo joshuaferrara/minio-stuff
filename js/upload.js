@@ -1,11 +1,27 @@
+class UploadForm extends HTMLElement {
+  connectedCallback() {
+    this.innerHTML = `<div class="uploadform">
+      <form name="upload">
+          <h1>Upload Image</h1>
+          Enter a caption: <input id="captionTxt" type="text"></input><br><br>
+          Select File: <input id="fileInput" type="file"></input><br><br>
+          <input id="submitBtn" type="submit" value="Upload Image"></input><br>
+      </form>
+    </div>`;
+  }
+}
+
+customElements.define('upload-form', UploadForm);
+
 $(document).ready(() => {
   'use strict';
+
 
   var endpoint = new AWS.Endpoint('http://localhost:9000/images');
   AWS.config.update({
     region: 'us-east-1',
-    accessKeyId: 'AIDXHWUSV1UDVNJY8J77',
-    secretAccessKey: 'XyTTxdpU+IcaH+F0UOLBnDRPKbpLnMls7Gk6dOP2',
+    accessKeyId: 'CMCN6J2V7TR7UBBT7W3S',
+    secretAccessKey: 'kyZujbWojNIdPmdJ0ZmJWf+TveGEgnXXazKm0y3+',
     sslEnabled: false
   });
 
@@ -41,3 +57,4 @@ $(document).ready(() => {
     });
   });
 });
+
