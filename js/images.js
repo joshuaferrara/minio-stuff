@@ -6,9 +6,9 @@ $(document).ready(() => {
     const fragment = document.getElementById('image-template');
     images.forEach((image) => {
       const instance = document.importNode(fragment.content, true);
-      instance.querySelector('.pic').setAttribute("src", image.src);
+      instance.querySelector('.pic').setAttribute('src', image.src);
       instance.querySelector('.caption').innerHTML = image.caption;
-      document.getElementById('images').appendChild(instance);
+      imageList.appendChild(instance);
     });
   });
 });

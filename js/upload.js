@@ -1,5 +1,5 @@
 class UploadForm extends HTMLElement {
-  connectedCallback() {
+  connectedCallback () {
     this.innerHTML = `<div class="uploadform">
       <form name="upload">
           <h1>Upload Image</h1>
@@ -16,16 +16,15 @@ customElements.define('upload-form', UploadForm);
 $(document).ready(() => {
   'use strict';
 
-
-  var endpoint = new AWS.Endpoint('http://localhost:9000/images');
-  AWS.config.update({
+  var endpoint = new window.AWS.Endpoint('http://localhost:9000/images');
+  window.AWS.config.update({
     region: 'us-east-1',
     accessKeyId: 'CMCN6J2V7TR7UBBT7W3S',
     secretAccessKey: 'kyZujbWojNIdPmdJ0ZmJWf+TveGEgnXXazKm0y3+',
     sslEnabled: false
   });
 
-  var s3 = new AWS.S3({
+  var s3 = new window.AWS.S3({
     endpoint: endpoint,
     params: {
       Bucket: 'images',
@@ -51,10 +50,9 @@ $(document).ready(() => {
       $.post('http://localhost:3000/images', {
         'src': `http://localhost:9000/images/${file.name}`,
         'caption': caption
-      }, (err, result, body) => {
+      }, (resp) => {
         window.location = 'http://localhost:8000/images.html';
       });
     });
   });
 });
-
